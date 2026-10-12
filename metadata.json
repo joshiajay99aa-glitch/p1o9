@@ -1,0 +1,6 @@
+{
+  "name": "3D Interactive Toy Robot",
+  "description": "An interactive 3D glossy BB-8 style toy robot with realistic physics-based rolling, responsive head tracking, and playful animations built with Three.js.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

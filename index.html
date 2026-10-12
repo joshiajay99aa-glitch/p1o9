@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>3D Interactive Toy Robot</title>
+    <meta name="description" content="An interactive 3D glossy BB-8 style toy robot with realistic physics-based rolling, responsive head tracking, and playful animations built with Three.js." />
+    <meta property="og:title" content="3D Interactive Toy Robot" />
+    <meta property="og:description" content="An interactive 3D glossy BB-8 style toy robot with realistic physics-based rolling, responsive head tracking, and playful animations built with Three.js." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/src/index.css" />
+  </head>
+  <body class="bg-[#dfdfdf] select-none overflow-hidden m-0 p-0 w-full h-full">
+    <!-- Loading Screen (Visible for at least 1.2s, fades out over 0.6s) -->
+    <div id="loading-screen" role="status" aria-live="polite">
+      <div class="spinner-ring" aria-hidden="true"></div>
+      <span class="loading-text">Loading</span>
+    </div>
+
+    <!-- WebGL Fallback Error Banner (shown only if WebGL fails) -->
+    <div id="webgl-fallback" class="hidden">
+      <div class="max-w-md p-6 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-slate-300 text-center">
+        <h2 class="text-lg font-semibold text-slate-800 mb-2">WebGL Unavailable</h2>
+        <p class="text-sm text-slate-600 leading-relaxed" id="fallback-reason">
+          WebGL could not be initialized. Please check your browser hardware acceleration settings or try a WebGL-compatible browser.
+        </p>
+      </div>
+    </div>
+
+    <!-- Vignette Background Overlay -->
+    <div class="vignette-overlay" aria-hidden="true"></div>
+
+    <!-- Main 3D Canvas -->
+    <div id="canvas-container">
+      <canvas id="webgl-canvas"></canvas>
+    </div>
+
+    <!-- Quiet Interaction Hint & Status (Clean typography, no pill badges) -->
+    <div class="fixed bottom-5 inset-x-0 z-10 flex justify-center pointer-events-none">
+      <div class="text-xs text-slate-600/80 tracking-wide font-normal flex items-center gap-2 px-3 py-1.5 bg-[#dfdfdf]/70 backdrop-blur-xs rounded-md">
+        <span>Move pointer to guide</span>
+        <span aria-hidden="true">·</span>
+        <span>Click or tap robot to jump</span>
+        <span id="idle-status" class="hidden transition-opacity duration-300 opacity-0">
+          <span aria-hidden="true">·</span>
+          <span class="text-amber-700/80 font-medium">Idle</span>
+        </span>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
